@@ -25,8 +25,8 @@ weather_pipeline.py   # Main pipeline script
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone git@github.com:cancinoray/weather-api-pipeline-dashboard.git
+   cd weather-api-pipeline-dashboard
    ```
 
 2. **Configure Environment Variables:**
@@ -37,7 +37,7 @@ weather_pipeline.py   # Main pipeline script
 
 3. **Build and Start Services:**
    ```bash
-   docker compose up --build
+   docker compose up --force-recreate --build -d
    ```
    This will start:
    - **PostgreSQL Database** (with pre-configured schema)
