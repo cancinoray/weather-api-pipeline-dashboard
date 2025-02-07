@@ -19,6 +19,7 @@ services:
       - weather_network
 
   weather_app:
+    image: weather_app:latest
     build:
       context: .
       dockerfile: Dockerfile
