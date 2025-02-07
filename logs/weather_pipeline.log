@@ -1,0 +1,24 @@
+2025-02-07 03:38:28,445 - INFO - Fetched data: {'coord': {'lon': -0.1257, 'lat': 51.5085}, 'weather': [{'id': 803, 'main': 'Clouds', 'description': 'broken clouds', 'icon': '04n'}], 'base': 'stations', 'main': {'temp': 2.96, 'feels_like': -1.29, 'temp_min': 2.22, 'temp_max': 3.89, 'pressure': 1032, 'humidity': 87, 'sea_level': 1032, 'grnd_level': 1027}, 'visibility': 10000, 'wind': {'speed': 5.14, 'deg': 30}, 'clouds': {'all': 75}, 'dt': 1738899374, 'sys': {'type': 2, 'id': 2075535, 'country': 'GB', 'sunrise': 1738913340, 'sunset': 1738947621}, 'timezone': 0, 'id': 2643743, 'name': 'London', 'cod': 200}
+2025-02-07 03:38:28,497 - INFO - Successfully stored weather data for London
+2025-02-07 03:38:28,766 - INFO - Graph saved to ./plots/temperature_trend_London.png
+2025-02-07 03:38:28,767 - INFO - 
+            Analysis for London (past 7 days):
+            Average Temperature: 4.8°C
+            Average Humidity: 82.2%
+        
+2025-02-07 03:38:29,264 - INFO - Fetched data: {'coord': {'lon': -74.006, 'lat': 40.7143}, 'weather': [{'id': 701, 'main': 'Mist', 'description': 'mist', 'icon': '50n'}], 'base': 'stations', 'main': {'temp': 3.13, 'feels_like': -1.32, 'temp_min': 1.76, 'temp_max': 4.01, 'pressure': 1010, 'humidity': 92, 'sea_level': 1010, 'grnd_level': 1009}, 'visibility': 9656, 'wind': {'speed': 5.66, 'deg': 220}, 'clouds': {'all': 100}, 'dt': 1738898805, 'sys': {'type': 2, 'id': 2008776, 'country': 'US', 'sunrise': 1738843241, 'sunset': 1738880376}, 'timezone': -18000, 'id': 5128581, 'name': 'New York', 'cod': 200}
+2025-02-07 03:38:29,275 - INFO - Successfully stored weather data for New York
+2025-02-07 03:38:29,444 - INFO - Graph saved to ./plots/temperature_trend_New York.png
+2025-02-07 03:38:29,444 - INFO - 
+            Analysis for New York (past 7 days):
+            Average Temperature: 2.7°C
+            Average Humidity: 91.2%
+        
+2025-02-07 03:38:29,981 - INFO - Fetched data: {'coord': {'lon': 139.6917, 'lat': 35.6895}, 'weather': [{'id': 803, 'main': 'Clouds', 'description': 'broken clouds', 'icon': '04d'}], 'base': 'stations', 'main': {'temp': 8.21, 'feels_like': 5.51, 'temp_min': 7.1, 'temp_max': 9.03, 'pressure': 1009, 'humidity': 20, 'sea_level': 1009, 'grnd_level': 1007}, 'visibility': 10000, 'wind': {'speed': 4.63, 'deg': 350, 'gust': 10.29}, 'clouds': {'all': 75}, 'dt': 1738898830, 'sys': {'type': 2, 'id': 268395, 'country': 'JP', 'sunrise': 1738877797, 'sunset': 1738916049}, 'timezone': 32400, 'id': 1850144, 'name': 'Tokyo', 'cod': 200}
+2025-02-07 03:38:29,999 - INFO - Successfully stored weather data for Tokyo
+2025-02-07 03:38:30,277 - INFO - Graph saved to ./plots/temperature_trend_Tokyo.png
+2025-02-07 03:38:30,278 - INFO - 
+            Analysis for Tokyo (past 7 days):
+            Average Temperature: 6.6°C
+            Average Humidity: 24.5%
+        

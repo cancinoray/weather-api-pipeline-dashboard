@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: weather_monitoring
+      POSTGRES_USER: weather_user
+      POSTGRES_PASSWORD: weather_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database_setup.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weather_user -d weather_monitoring"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - weather_network
+
+  weather_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://weather_user:weather_pass@postgres:5432/weather_monitoring
+      OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./plots:/app/plots
+    networks:
+      - weather_network
+
+  metabase:
+    image: metabase/metabase:latest
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: weather_user
+      MB_DB_PASS: weather_pass
+      MB_DB_HOST: postgres
+      # Add startup delay to ensure database is ready
+      MB_DB_CONNECTION_TIMEOUT: 30
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - weather_network
+    volumes:
+      - metabase_data:/metabase-data
+
+networks:
+  weather_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  metabase_data:
